@@ -1,0 +1,14 @@
+{
+    "name": "acf/propertyfeatures",
+    "title": "Property Features",
+    "description": "A block to render the property features",
+    "category": "design",
+    "keywords": ["property", "features"],
+    "icon": "star-filled",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./propertyFeatures.php",
+        "mode": "preview",
+        "postTypes": ["property"]
+    }
+}

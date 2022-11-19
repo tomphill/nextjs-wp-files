@@ -1,0 +1,13 @@
+{
+    "name": "acf/tickitem",
+    "title": "Tick Item",
+    "description": "A block to render a tick item",
+    "category": "design",
+    "keywords": ["checkmark", "tick", "correct"],
+    "icon": "yes-alt",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./tickItem.php",
+        "mode": "preview"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "acf/propertysearch",
+    "title": "Property Search",
+    "description": "A widget to search for properties",
+    "category": "widget",
+    "keywords": ["property search", "property", "property filter"],
+    "icon": "search",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./propertySearch.php",
+        "mode": "preview"
+    }
+}

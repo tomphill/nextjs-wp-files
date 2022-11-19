@@ -11,8 +11,28 @@
 
  add_action('acf/init', 'acf_init_block_types');
  function acf_init_block_types(){
-	if(function_exists('acf_register_block_type')){
+	wp_enqueue_script('fontawesome', get_template_directory_uri() . "/template-parts/fontawesome/all.min.js");
+	if(function_exists('register_block_type')){
+		register_block_type(get_template_directory() . "/template-parts/blocks/ctaButton/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/propertySearch/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/formspreeForm/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/propertyFeatures/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/tickItem/block.json");
+	}
+	
+	// OLD WAY OF REGISTERING CUSTOM ACF GUTENBERG BLOCKS
+	/*if(function_exists('acf_register_block_type')){
 		// register our block types
+
+		acf_register_block_type(array(
+			'name' => 'ctaButton',
+			'title' => 'CTA Button',
+			'description' => 'A call to action block',
+			'render_template' => 'template-parts/blocks/ctaButton/ctaButton.php',
+			'category' => 'design',
+			'icon' => 'button',
+			'keywords' => array('button', 'cta', 'call to action')
+		));
 		acf_register_block_type(array(
 			'name' => 'formspreeForm',
 			'title' => 'Formspree Form',
@@ -30,18 +50,9 @@
 			'category' => 'design',
 			'supports' => array('jsx' => true),
 			'icon' => 'yes-alt',
-			'enqueue_style' => get_template_directory_uri() . "/template-parts/fontawesome/all.min.css",
-			'enqueue_script' => get_template_directory_uri() . "/template-parts/fontawesome/all.min.js",
+			//'enqueue_style' => get_template_directory_uri() . "/template-parts/fontawesome/all.min.css",
+			//'enqueue_script' => get_template_directory_uri() . "/template-parts/fontawesome/all.min.js",
 			'keywords' => array('check item', 'tick item', 'correct')
-		));
-		acf_register_block_type(array(
-			'name' => 'ctaButton',
-			'title' => 'CTA Button',
-			'description' => 'A call to action block',
-			'render_template' => 'template-parts/blocks/ctaButton/ctaButton.php',
-			'category' => 'design',
-			'icon' => 'button',
-			'keywords' => array('button', 'cta', 'call to action')
 		));
 		acf_register_block_type(array(
 			'name' => 'propertySearch',
@@ -64,7 +75,7 @@
 			'enqueue_script' => get_template_directory_uri() . "/template-parts/fontawesome/all.min.js",
 			'post_types' => array('property')
 		));
-	}
+	}*/
  }
 
  if(function_exists('acf_add_options_page')){
